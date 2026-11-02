@@ -27,6 +27,9 @@ jobs:
       - name: Build and test
         run: mvn --batch-mode verify
 
+      - name: Build Docker image
+        run: docker build -t java-devops-app:1.0 .
+        
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
